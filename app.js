@@ -23,7 +23,7 @@ const listingRouter = require("./routes/listing.js");
 const reviewsRouter = require("./routes/review.js"); 
 const userRouter = require("./routes/user.js");
 
-// const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+
 const dbUrl= process.env.ATLASDB_URL;
 
 
@@ -61,7 +61,7 @@ store.on("error",()=>{
 
 const sessionOptions = {
     store,
-    secret: " mysupersecretcode",
+    secret: process.env.SECRET,
     resave:false,
     saveUninitialized :true,
     cookie:{
